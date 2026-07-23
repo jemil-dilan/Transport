@@ -75,7 +75,7 @@ export default defineConfig({
       '@auth/create/react': '@hono/auth-js/react',
       '@auth/create': path.resolve(__dirname, './src/__create/@auth/create'),
       '@': path.resolve(__dirname, 'src'),
-      '@shared': path.resolve(__dirname, '../../../shared'),
+      '@shared': path.resolve(__dirname, '../../shared'),
     },
     dedupe: ['react', 'react-dom'],
   },
