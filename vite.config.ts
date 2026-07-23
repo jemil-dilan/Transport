@@ -1,4 +1,5 @@
 import path from 'node:path';
+import fs from 'node:fs';
 import { reactRouter } from '@react-router/dev/vite';
 import { reactRouterHonoServer } from 'react-router-hono-server/dev';
 import { defineConfig } from 'vite';
@@ -75,7 +76,12 @@ export default defineConfig({
       '@auth/create/react': '@hono/auth-js/react',
       '@auth/create': path.resolve(__dirname, './src/__create/@auth/create'),
       '@': path.resolve(__dirname, 'src'),
-      '@shared': path.resolve(__dirname, '../../shared'),
+      '@shared/design-mode': fs.existsSync(path.resolve(__dirname, '../../shared'))
+        ? path.resolve(__dirname, '../../shared/design-mode')
+        : path.resolve(__dirname, './src/__create/mock-shared/design-mode.ts'),
+      '@shared': fs.existsSync(path.resolve(__dirname, '../../shared'))
+        ? path.resolve(__dirname, '../../shared')
+        : path.resolve(__dirname, './src/__create/mock-shared'),
     },
     dedupe: ['react', 'react-dom'],
   },
