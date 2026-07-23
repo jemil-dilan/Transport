@@ -1,4 +1,22 @@
 {
+  "version": 2,
+  "framework": "vite",
   "buildCommand": "npm run build",
-  "outputDirectory": "build"
+  "outputDirectory": "build/client",
+  "functions": {
+    "build/server/index.js": {
+      "maxDuration": 60,
+      "includeFiles": "src/app/api/**"
+    }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "build/server/index.js"
+    }
+  ]
 }
