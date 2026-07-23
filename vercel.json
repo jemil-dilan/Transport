@@ -2,12 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "build/client",
   "framework": "vite",
-  "env": {
-    "NEXT_PUBLIC_CREATE_ENV": "@next_public_create_env",
-    "NEXT_PUBLIC_CREATE_BASE_URL": "@next_public_create_base_url",
-    "NEXT_PUBLIC_CREATE_HOST": "@next_public_create_host",
-    "NEXT_PUBLIC_PROJECT_GROUP_ID": "@next_public_project_group_id"
-  },
   "functions": {
     "build/server/index.js": {
       "maxDuration": 60
