@@ -1,10 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "build/client",
-  "framework": "vite",
-  "functions": {
-    "build/server/index.js": {
-      "maxDuration": 60
-    }
-  }
+  "serverPath": "build/server/index.js"
 }
