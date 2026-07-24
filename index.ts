@@ -1,5 +1,5 @@
 import { handle } from 'hono/vercel';
-import app from '../__create/index';
+import app from './__create/index';
 
 export const GET = handle(app);
 export const POST = handle(app);
@@ -8,4 +8,5 @@ export const DELETE = handle(app);
 export const PATCH = handle(app);
 export const OPTIONS = handle(app);
 export const HEAD = handle(app);
-export default handle(app);
+
+export default app;
