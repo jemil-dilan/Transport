@@ -21,9 +21,11 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
+		"allowJs": true,
+		"checkJs": false,
 		"paths": {
 			"@/*": ["./src/*"],
-			"@shared/*": ["../../shared/*"]
+			"@shared/*": ["./src/__create/mock-shared/*"]
 		}
 	}
 }
