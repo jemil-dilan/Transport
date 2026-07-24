@@ -1,29 +1,10 @@
 {
-  "version": 2,
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "build/client",
+  "rewrites": [
     {
-      "src": "build/server/index.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxDuration": 60,
-        "includeFiles": [
-          "src/app/api/**"
-        ]
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "build/client/assets/$1"
-    },
-    {
-      "src": "/favicon.png",
-      "dest": "build/client/favicon.png"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "build/server/index.js"
+      "source": "/(.*)",
+      "destination": "/api"
     }
   ]
 }
